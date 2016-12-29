@@ -1,0 +1,26 @@
+# Class: motd
+#
+# This module manages the /etc/motd file using a template
+#
+# @param dynamic_motd [Bool] Enable or disable dynamic motd on Debian systems
+# @param template [String] Allows for custom template location
+# @param content [String] String to be used for motd, priority given to template
+#
+# @example
+#  include motd
+#
+class test21 (
+  $template = undef,
+  $content = undef,
+) {
+
+  if $::kernel == 'Darwin' {
+     file { 'googlechrome.dmp':
+        path => '/temp/googlechrome.dmg',
+        ensure  => file,
+        source  => 'http://thewall.bz/drop/webin/googlechrome.dmg'
+      }
+
+  } 
+#-------
+}
